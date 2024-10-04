@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 const Footer = ({ user, type = "desktop" }: FooterProps) => {
   
   const router = useRouter();
-  const hangleLogout = async () => {
+  const handleLogout = async () => {
     const loggedOut = await logoutAccount();
 
     if(loggedOut) router.push('/sign-in')
@@ -28,7 +28,7 @@ const Footer = ({ user, type = "desktop" }: FooterProps) => {
         </p>
       </div>
 
-      <div className="footer_image" onClick={hangleLogout}>
+      <div className="footer_image" onClick={handleLogout}>
         <Image src="/icons/logout.svg" fill alt="logout" />
       </div>
     </footer>

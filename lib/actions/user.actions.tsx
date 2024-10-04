@@ -16,7 +16,7 @@ export const signIn = async ({ email, password }: signInProps) => {
       sameSite: "strict",
       secure: true,
     });
-    
+
     return parseStringify(response);
   } catch (error) {
     console.error("Error", error);
@@ -53,11 +53,8 @@ export const signUp = async (userData: SignUpParams) => {
 
 export async function getLoggedInUser() {
   try {
-    console.log("Getting logged in user");
     const { account } = await createSessionClient();
     const user = await account.get();
-
-    console.log("Account user" + account);
 
     return parseStringify(user);
   } catch (error) {
